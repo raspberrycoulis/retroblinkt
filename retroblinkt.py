@@ -1,53 +1,52 @@
+#!/usr/bin/env python
 import sys
 from blinkt import set_clear_on_exit, set_all, set_pixel,show,set_brightness
 from time import sleep
 
-def red():
-
-    set_all(255,0,0)
+def nintendo():
+    set_all(228,0,15)
     set_brightness(0.5)
     show()
 
-def green():
-
-    set_all(0,128,0)
+def gb():
+    set_all(155,188,15)
     set_brightness(0.5)
     show()
 
-def purple():
-
-    set_all(255,0,255)
+def psx():
+    set_all(102,92.190)
     set_brightness(0.5)
     show()
 
-def yellow():
+def sega():
+    set_all(23,86,155)
+    set_brightness(0.5)
+    show()
 
+def unknown():
     set_all(255,255,0)
-    set_brightness(0.5)
-    show()
-
-def orange():
-    set_all(255,165,0)
     set_brightness(0.5)
     show()
 
 platform = sys.argv[1]
 
-while 'SOLID' in open('/home/pi/rainbow.txt').read():
-
+while 'SOLID' in open('/home/pi/control.txt').read():
     if platform == "nes":
-        green()
+        nintendo()
     elif platform == "snes":
-        yellow()
-    elif platform == "atari2600":
-        orange()
-    elif platform == "psx":
-        red()
+        nintendo()
     elif platform == "megadrive":
-        purple()
+        sega()
+    elif platform == "psx":
+        psx()
+    elif platform == "mastersystem":
+        sega()
+    elif platform == "gb":
+        gb()
+    elif platform == "gba":
+        gb()
     else:
-        purple()
-        print("Unknown Console")
+        unknown()
 
 set_all(0,0,0)
 show()

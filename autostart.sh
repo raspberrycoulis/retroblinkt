@@ -1,4 +1,3 @@
-echo "RAINBOW" > $HOME/rainbow.txt
-sudo python /home/pi/rainbow.py &
+echo "LARSON" > $HOME/control.txt
+sudo python /home/pi/larson.py &
 emulationstation #auto
-
